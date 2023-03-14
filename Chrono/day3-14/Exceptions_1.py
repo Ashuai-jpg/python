@@ -38,14 +38,19 @@ except DogNotFoundException:
     print("Dog not found")
 
 def working_with_file():
-    name = os.path.abspath(__file__) #get the absolute filename with path preceded
-    print(name)
+    filename = os.path.abspath(__file__) #get the absolute filename with path preceded
+    print(filename)
     try:
-        file = open(name, 'r')
+        file = open(filename, 'r')
         content = file.read()
         print(content)
     finally:
         file.close()
+    
+    """with will auomatically close the opened file"""
+    with open(filename, 'r') as f:
+        content = f.read()
+        print(content)
 
 working_with_file()
 

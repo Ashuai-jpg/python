@@ -1,0 +1,7 @@
+#pip
+
+pip install <packagename> #install specific package
+pip install -U <packagename> #update specific package
+pip uninstall <packagename> #uninstall specific package
+pip show <packagename>#show specific package info
+pip -V <packagename>#show specific package version
