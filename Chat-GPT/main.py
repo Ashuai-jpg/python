@@ -3,8 +3,6 @@ from API_KEY import api_key
 openai.api_key = api_key
 
 # make qurey to Chat-GPT
-
-
 def query(content):
     output = openai.ChatCompletion.create(
         model='gpt-3.5-turbo',
@@ -14,8 +12,6 @@ def query(content):
     return output
 
 # get the mesasge back
-
-
 def init():
     while True:
         quiz = input('Any question or exit:')
@@ -29,13 +25,11 @@ def init():
 
             try:
                 with open("final.md", "a+") as f:
-                    f.write(f'\n Me:---->{quiz}\n')
-                    f.write(f'\nGPT-3.5:{final}')
+                    f.write(f'\n## *ME*: {quiz}  \n')
+                    f.write(f'## *GPT-3.5*: {final}  \n')
             finally:
                 f.close()
             # print("runnig else")
-
-
 
 
 init()
